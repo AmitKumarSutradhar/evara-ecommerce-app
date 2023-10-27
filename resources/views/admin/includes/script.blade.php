@@ -46,3 +46,23 @@
 
 <!-- SWITCHER JS -->
 <script src="{{ asset('/') }}backend/assets/switcher/js/switcher.js"></script>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#categoryImage').attr('src', e.target.result);
+                $('#categoryImage').attr('weight', 100);
+                $('#categoryImage').attr('height', 100);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function(){
+        readURL(this);
+    });
+</script>

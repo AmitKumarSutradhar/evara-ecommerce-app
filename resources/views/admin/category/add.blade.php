@@ -41,7 +41,8 @@
                         <div class="row mb-4">
                             <label for="email" class="col-md-3 form-label">Category Image</label>
                             <div class="col-md-9">
-                                <input class="form-control" id=""  type="file" name="image">
+                                <input class="form-control" id="imgInp"  type="file" name="image">
+                                <img src="" alt="" id="categoryImage" class="mt-3">
                             </div>
                         </div>
                         <div class="row mt-3">
