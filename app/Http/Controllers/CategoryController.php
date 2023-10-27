@@ -28,7 +28,8 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        return view('admin.category.store');
+        Category::newCategory($request);
+        return back()->with('message','Category info create successfully.');
     }
 
     /**
