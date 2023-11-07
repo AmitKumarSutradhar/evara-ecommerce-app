@@ -52,8 +52,8 @@
                         <span class="side-menu__label">Brand Module</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">Brand</a></li>
-                        <li><a href="chart-echart.html" class="slide-item"> Add Brands</a></li>
-                        <li><a href="chart-echart.html" class="slide-item"> Manage Brands</a></li>
+                        <li><a href="{{ route('brand.create') }}" class="slide-item"> Add Brands</a></li>
+                        <li><a href="{{ route('brand.index') }}" class="slide-item"> Manage Brands</a></li>
                     </ul>
                 </li>
                 <li class="slide">
@@ -62,8 +62,8 @@
                         <span class="side-menu__label">Unit Module</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">Unit</a></li>
-                        <li><a href="icons.html" class="slide-item">Add Unit</a></li>
-                        <li><a href="icons.html" class="slide-item">Manage Unit</a></li>
+                        <li><a href="{{ route('unit.create') }}" class="slide-item">Add Unit</a></li>
+                        <li><a href="{{ route('unit.index') }}" class="slide-item">Manage Unit</a></li>
                     </ul>
                 </li>
                 <li class="slide">
@@ -72,8 +72,8 @@
                         <span class="side-menu__label">Color Module</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">Color</a></li>
-                        <li><a href="maps1.html" class="slide-item">Add Color</a></li>
-                        <li><a href="maps1.html" class="slide-item">Manage Color</a></li>
+                        <li><a href="{{ route('color.create') }}" class="slide-item">Add Color</a></li>
+                        <li><a href="{{ route('color.index') }}" class="slide-item">Manage Color</a></li>
                     </ul>
                 </li>
                 <li class="slide">
@@ -83,8 +83,8 @@
                     </a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">Size</a></li>
-                        <li><a href="calendar2.html" class="slide-item">Add Size</a></li>
-                        <li><a href="chat.html" class="slide-item">Manage Size</a></li>
+                        <li><a href="{{ route('size.create') }}" class="slide-item">Add Size</a></li>
+                        <li><a href="{{ route('size.index') }}" class="slide-item">Manage Size</a></li>
                     </ul>
                 </li>
 
@@ -95,8 +95,8 @@
                     </a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">Product</a></li>
-                        <li><a href="alerts.html" class="slide-item">Add Product</a></li>
-                        <li><a href="alerts.html" class="slide-item">Manage Product</a></li>
+                        <li><a href="{{ route('brand.create') }}" class="slide-item">Add Product</a></li>
+                        <li><a href="{{ route('brand.index') }}" class="slide-item">Manage Product</a></li>
                     </ul>
                 </li>
                 <li class="slide">
@@ -106,7 +106,7 @@
                     </a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">Order</a></li>
-                        <li><a href="accordion.html" class="slide-item">Manage Order</a></li>
+                        <li><a href="{{ route('brand.index') }}" class="slide-item">Manage Order</a></li>
                     </ul>
                 </li>
                 <li class="slide">
@@ -115,8 +115,8 @@
                         <span class="side-menu__label">User Module</span><i class="angle fa fa-angle-right"></i></a>
                     <ul class="slide-menu">
                         <li class="side-menu-label1"><a href="javascript:void(0)">User</a></li>
-                        <li><a href="background.html" class="slide-item">Add User</a></li>
-                        <li><a href="background.html" class="slide-item">Manage User</a></li>
+                        <li><a href="{{ route('brand.create') }}" class="slide-item">Add User</a></li>
+                        <li><a href="{{ route('brand.index') }}" class="slide-item">Manage User</a></li>
                     </ul>
                 </li>
             </ul>
