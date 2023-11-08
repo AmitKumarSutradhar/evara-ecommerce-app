@@ -28,7 +28,7 @@ class Unit extends Model
         $unit->save();
     }
 
-    public static  function deleteBrand($unit){
+    public static  function deleteUnit($unit){
         $unit->delete();
     }
 }

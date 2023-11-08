@@ -45,7 +45,7 @@
                         <div class="row mb-4">
                             <label for="lastName" class="col-md-3 form-label">Unit Description</label>
                             <div class="col-md-9">
-                                <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Unit Description">value="{{ $unit->description }}"</textarea>
+                                <textarea name="description" id="" cols="30" rows="10" class="form-control" placeholder="Unit Description">{{ $unit->description }}"</textarea>
                             </div>
                         </div>
                         <div class="row mt-3">

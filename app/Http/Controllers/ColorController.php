@@ -12,7 +12,7 @@ class ColorController extends Controller
      */
     public function index()
     {
-        return view('admin.color.index');
+        return view('admin.color.index',['colors' => Color::all()]);
     }
 
     /**
@@ -28,7 +28,8 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Color::newColor($request);
+        return back()->with('message','Color Info Added Successfully.');
     }
 
     /**
@@ -44,7 +45,7 @@ class ColorController extends Controller
      */
     public function edit(Color $color)
     {
-        return view('admin.color.edit');
+        return view('admin.color.edit',['color' => $color]);
     }
 
     /**
@@ -52,7 +53,8 @@ class ColorController extends Controller
      */
     public function update(Request $request, Color $color)
     {
-        //
+        Color::updateColor($request, $color);
+        return redirect('/color')->with('message','Color Info Updated Successfully.');
     }
 
     /**
@@ -60,6 +62,7 @@ class ColorController extends Controller
      */
     public function destroy(Color $color)
     {
-        //
+        Color::deleteColor($color);
+        return back()->with('message','Color Info Deleted Successfully.');
     }
 }
