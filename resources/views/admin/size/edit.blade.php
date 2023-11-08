@@ -26,6 +26,7 @@
                 <div class="card-body">
                     <p class="text-success">{{ session('message') }}</p>
                     <form class="form-horizontal" action="{{ route('size.update',$size->id) }}" method="post">
+                        @method('PUT')
                         @csrf
                         <div class="row mb-4">
                             <label for="lastName" class="col-md-3 form-label">Color Name</label>
@@ -54,7 +55,7 @@
                                 <label class=""><input type="radio" name="status" value="0" {{ $size->status == 0 ? 'checked' : '' }}><span class="text-13">Unpublished</span></label>
                             </div>
                         </div>
-                        <button class="btn btn-primary rounded-0 float-end" type="submit">Create New Size</button>
+                        <button class="btn btn-primary rounded-0 float-end" type="submit">Update Size Info</button>
                     </form>
                 </div>
             </div>

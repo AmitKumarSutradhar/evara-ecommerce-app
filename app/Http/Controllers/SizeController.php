@@ -12,7 +12,7 @@ class SizeController extends Controller
      */
     public function index()
     {
-        return view('admin.size.index');
+        return view('admin.size.index',['sizes' => Size::all()]);
     }
 
     /**
@@ -20,7 +20,7 @@ class SizeController extends Controller
      */
     public function create()
     {
-        return view('admin.color.add');
+        return view('admin.size.add');
     }
 
     /**
@@ -28,7 +28,8 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Size::newSize($request);
+        return back()->with('message','Size Info Added Successfully.');
     }
 
     /**
@@ -44,7 +45,7 @@ class SizeController extends Controller
      */
     public function edit(Size $size)
     {
-        return view('admin.color.edit');
+        return view('admin.size.edit',['size' => $size]);
     }
 
     /**
@@ -52,7 +53,8 @@ class SizeController extends Controller
      */
     public function update(Request $request, Size $size)
     {
-        //
+        Size::updateSize($request, $size);
+        return redirect('/size')->with('message','Size updated successfully.');
     }
 
     /**
@@ -60,6 +62,7 @@ class SizeController extends Controller
      */
     public function destroy(Size $size)
     {
-        //
+        Size::deleteSize($size);
+        return back()->with('message','Size Deleted Successfully.');
     }
 }
