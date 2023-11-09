@@ -9,6 +9,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\SizeController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', [EvaraController::class,'index'])->name('home');
 Route::get('/product-category', [EvaraController::class ,'category'])->name('product-category');
@@ -26,4 +27,5 @@ Route::middleware([
     Route::resource('unit', UnitController::class);
     Route::resource('color',ColorController::class);
     Route::resource('size',SizeController::class);
+    Route::resource('product',ProductController::class);
 });
