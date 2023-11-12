@@ -28,4 +28,6 @@ Route::middleware([
     Route::resource('color',ColorController::class);
     Route::resource('size',SizeController::class);
     Route::resource('product',ProductController::class);
+
+    Route::get('get-sub-category-by-category',[ProductController::class,'getSubCategoryByCategory'])->name('get-sub-category-by-category');
 });

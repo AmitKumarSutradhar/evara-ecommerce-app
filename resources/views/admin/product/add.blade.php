@@ -30,7 +30,7 @@
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Category Name</label>
                             <div class="col-md-9">
-                                <select name="category_id" id="" class="form-control" required>
+                                <select name="category_id" onchange="setSubCategory(this.value)" id="" class="form-control" required>
                                     <option value="" disabled selected>-- Select Category --</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" >{{ $category->name }}</option>
@@ -42,7 +42,7 @@
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Sub Category Name</label>
                             <div class="col-md-9">
-                                <select name="sub_category_id" id="" class="form-control" required>
+                                <select name="sub_category_id" id="subCategoryId" class="form-control" required>
                                     <option value="" disabled selected>-- Select Sub Category --</option>
                                     @foreach($sub_categories as $sub_category)
                                         <option value="{{ $sub_category->id }}" >{{ $sub_category->name }}</option>
@@ -78,7 +78,7 @@
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Color Name</label>
                             <div class="col-md-9 form-group">
-                                <select multiple name="color_id" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Color">
+                                <select multiple name="color_id[]" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Color">
                                     @foreach($colors as $colors)
                                         <option value="{{ $colors->id }}" >{{ $colors->name }}</option>
                                     @endforeach
@@ -89,7 +89,7 @@
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Size Name</label>
                             <div class="col-md-9 form-group">
-                                <select multiple name="size_id" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Product Size">
+                                <select multiple name="size_id[]" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Product Size">
                                     @foreach($sizes as $size)
                                         <option value="{{ $size->id }}" >{{ $size->name }}</option>
                                     @endforeach
@@ -118,16 +118,21 @@
                             </div>
                         </div>
                         <div class="row mb-4">
-                            <label for="longDescription" class="col-md-3 form-label">Long Description</label>
+                            <label for="summernote" class="col-md-3 form-label">Long Description</label>
                             <div class="col-md-9">
-                                <textarea name="long_description" id="longDescription" cols="30" rows="10" class="form-control" placeholder="Long Description"></textarea>
+                                <textarea name="long_description" id="summernote" cols="30" rows="10" class="form-control" placeholder="Long Description"></textarea>
                             </div>
                         </div>
                         <div class="row mb-4">
                             <label for="email" class="col-md-3 form-label">Product Image</label>
                             <div class="col-md-9">
-                                <input class="form-control" id="imgInp"  type="file" name="image">
-                                <img src="" alt="" id="categoryImage" class="mt-3">
+                                <input type="file" class="dropify" name="image" data-height="200" />
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="email" class="col-md-3 form-label">Product Other Image</label>
+                            <div class="col-md-9">
+                                <input id="demo" type="file" name="other_image" accept=" image/jpeg, image/png, text/html, application/zip, text/css, text/js" multiple />
                             </div>
                         </div>
                         <div class="row mb-4">

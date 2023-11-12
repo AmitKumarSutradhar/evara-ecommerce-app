@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    private $subCategories;
+
     /**
      * Display a listing of the resource.
      */
@@ -36,12 +38,18 @@ class ProductController extends Controller
         ]);
     }
 
+    public function getSubCategoryByCategory()
+    {
+        $this->subCategories = SubCategory::where('category_id',$_GET['id'])->get();
+        return response()->json($this->subCategories);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
