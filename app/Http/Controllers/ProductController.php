@@ -6,6 +6,9 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\ProductColor;
+use App\Models\ProductImage;
+use App\Models\ProductSize;
 use App\Models\Size;
 use App\Models\SubCategory;
 use App\Models\Unit;
@@ -13,7 +16,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    private $subCategories;
+    private $subCategories, $product;
 
     /**
      * Display a listing of the resource.
@@ -49,7 +52,11 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $this->product = Product::newProduct($request);
+        ProductColor::newProductColor($request->colors, $this->product->id);
+        ProductSize::newProductSize($request->sizes, $this->product->id);
+        ProductImage::newProductImage($request->other_image, $this->product->id);
+        return back()->with('message','Product Info Added Successfully.');
     }
 
     /**

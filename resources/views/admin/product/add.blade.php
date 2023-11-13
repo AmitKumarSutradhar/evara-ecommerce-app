@@ -78,7 +78,7 @@
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Color Name</label>
                             <div class="col-md-9 form-group">
-                                <select multiple name="color_id[]" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Color">
+                                <select multiple name="colors[]" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Color">
                                     @foreach($colors as $colors)
                                         <option value="{{ $colors->id }}" >{{ $colors->name }}</option>
                                     @endforeach
@@ -89,7 +89,7 @@
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Size Name</label>
                             <div class="col-md-9 form-group">
-                                <select multiple name="size_id[]" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Product Size">
+                                <select multiple name="sizes[]" id="" class="form-control select2-show-search form-select" required data-placeholder="Select Product Size">
                                     @foreach($sizes as $size)
                                         <option value="{{ $size->id }}" >{{ $size->name }}</option>
                                     @endforeach
@@ -132,7 +132,7 @@
                         <div class="row mb-4">
                             <label for="email" class="col-md-3 form-label">Product Other Image</label>
                             <div class="col-md-9">
-                                <input id="demo" type="file" name="other_image" accept=" image/jpeg, image/png, text/html, application/zip, text/css, text/js" multiple />
+                                <input id="" type="file" class="dropify" name="other_image[]" accept=" image/jpeg, image/png, text/html, application/zip, text/css, text/js" multiple />
                             </div>
                         </div>
                         <div class="row mb-4">
