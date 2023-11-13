@@ -52,7 +52,7 @@
                                     <td>{{ $product->status == 1 ? 'Published' : 'Unpublished' }}</td>
                                     <td class="d-flex">
                                         <a href="{{ route('product.show',$product->id) }}" class="btn btn-info btn-sm me-3">
-                                            <i class="fa fa-book"></i>
+                                            <i class="fa fa-eye"></i>
                                         </a>
                                         <a href="{{ route('product.edit',$product->id) }}" class="btn btn-success btn-sm me-3">
                                             <i class="fa fa-edit"></i>
