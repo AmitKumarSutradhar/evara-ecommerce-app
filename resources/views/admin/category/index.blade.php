@@ -47,10 +47,10 @@
                                     <td><img src="{{ asset($category->image) }}" style="width: 60px;" alt=""></td>
                                     <td>{{ $category->status == 1 ? 'Published' : 'Unpublished' }}</td>
                                     <td class="d-flex">
-                                        <a href="{{ route('sub-category.edit',$category->id) }}" class="btn btn-success btn-sm me-3">
+                                        <a href="{{ route('category.edit',$category->id) }}" class="btn btn-success btn-sm me-3">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('sub-category.destroy',$category->id) }}" method="post">
+                                        <form action="{{ route('category.destroy',$category->id) }}" method="post">
                                             @method("DELETE")
                                             @csrf
                                             <button type="submit"  class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete?') ">

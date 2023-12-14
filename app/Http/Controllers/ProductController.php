@@ -67,7 +67,13 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return view('admin.product.show',[
-            'product' => $product,
+            'product'           => $product,
+            'categories'        => Category::all(),
+            'sub_categories'    => SubCategory::all(),
+            'brands'            => Brand::all(),
+            'units'             => Unit::all(),
+            'colors'            => Color::all(),
+            'sizes'             => Size::all(),
         ]);
     }
 
@@ -76,7 +82,15 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.product.edit',['product' => $product]);
+        return view('admin.product.edit',[
+                'product'           => $product,
+                'categories'        => Category::all(),
+                'sub_categories'    => SubCategory::all(),
+                'brands'            => Brand::all(),
+                'units'             => Unit::all(),
+                'colors'            => Color::all(),
+                'sizes'             => Size::all(),
+            ]);
     }
 
     /**

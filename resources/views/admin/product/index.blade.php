@@ -46,7 +46,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->code }}</td>
-                                    <td>{{ $product->category->name }}</td>
+{{--                                    <td>{{ $product->category->name }}</td>--}}
                                     <td><img src="{{ asset($product->image) }}" style="width: 60px;" alt=""></td>
                                     <td>{{ $product->stock_amount }}</td>
                                     <td>{{ $product->status == 1 ? 'Published' : 'Unpublished' }}</td>

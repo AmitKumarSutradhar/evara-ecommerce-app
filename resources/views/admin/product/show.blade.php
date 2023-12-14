@@ -27,7 +27,7 @@
                     <table class="table table-bordered table-hover">
                         <tr>
                             <th>Product Id</th>
-                            <td>123</td>
+                            <td>{{ $product->id }}</td>
                         </tr>
                         <tr>
                             <th>Product Name</th>
@@ -35,19 +35,37 @@
                         </tr>
                         <tr>
                             <th>Product Code</th>
-                            <td>123</td>
+                            <td>{{ $product->code }}</td>
+                        </tr>
+                        <tr>
+                            <th>Product Image </th>
+                            <td>
+                                <img src="{{ asset($product->image) }}" width="150" height="130" alt="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Product Other Image </th>
+                            <td>
+                                @foreach($product->productImages as $productImage)
+                                    <img src="{{ asset($productImage->image) }}" style="width: 140px;" alt="">
+                                @endforeach
+                            </td>
                         </tr>
                         <tr>
                             <th>Category Name</th>
-                            <td>123</td>
+                            <td>{{ $product->category->name }}</td>
                         </tr>
                         <tr>
                             <th>Sub Category Name</th>
-                            <td>123</td>
+                            <td>{{ $product->subCategory->name }}</td>
                         </tr>
                         <tr>
                             <th>Brand Name</th>
-                            <td>123</td>
+                            <td>{{ $product->brand->name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Unit Name</th>
+                            <td>{{ $product->unit->name }}</td>
                         </tr>
                         <tr>
                             <th>Product Color</th>
@@ -59,22 +77,46 @@
                         </tr>
                         <tr>
                             <th>Product Size</th>
-                            <td>123</td>
+                            <td>
+                                @foreach($product->sizes as $size)
+                                    <span>{{ $size->size->name.' '}}</span>
+                                @endforeach
+                            </td>
                         </tr>
                         <tr>
                             <th>Short Description</th>
-                            <td>123</td>
+                            <td>{{ $product->short_description }}</td>
                         </tr>
                         <tr>
                             <th>Long Description</th>
-                            <td>123</td>
+                            <td>{!! $product->long_description !!}</td>
                         </tr>
                         <tr>
                             <th>Price</th>
                             <td>
-                                <span>Regular Price: 1123</span> <br/>
-                                <span>Selling Price: 1123</span>
+                                <span>Regular Price: {{ $product->regular_price }}</span> <br/>
+                                <span>Selling Price: {{ $product->selling_price }}</span>
                             </td>
+                        </tr>
+                        <tr>
+                            <th>Stock Amount</th>
+                            <td>{{ $product->stock_amount }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total View </th>
+                            <td>{{ $product->hit_count }}</td>
+                        </tr>
+                        <tr>
+                            <th>Total Sale </th>
+                            <td>{{ $product->seals_count }}</td>
+                        </tr>
+                        <tr>
+                            <th>Featured Status </th>
+                            <td>{{ $product->featured_status == 1 ? "Featured" : "Not Featured." }}</td>
+                        </tr>
+                        <tr>
+                            <th>Publication Status </th>
+                            <td>{{ $product->status == 1 ? "Published" : "Unpublished" }}</td>
                         </tr>
                     </table>
                 </div>

@@ -29,4 +29,5 @@ class Size extends Model
     public static  function deleteSize($size){
         $size->delete();
     }
+
 }

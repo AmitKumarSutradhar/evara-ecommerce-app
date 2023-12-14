@@ -63,6 +63,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::deleteCategory($category);
+        return back()->with('message','Category Info Deleted Successfully.');
     }
 }

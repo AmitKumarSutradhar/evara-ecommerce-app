@@ -21,11 +21,24 @@ class Category extends Model
     }
 
     public static function newCategory($request){
+        if ($request->file('image')){
+            self::$imageUrl = self::getImageUrl($request);
+        } else{
+            self::$imageUrl = 'upload/product.png';
+        }
+
         self::$category                 = new Category();
         self::$category->name           =      $request->name;
         self::$category->description    =      $request->description;
-        self::$category->image          =      self::getImageUrl($request);
+        self::$category->image          =      self::$imageUrl;
         self::$category->status         =      $request->status;
         self::$category->save();
+    }
+
+    public static  function deleteCategory($category){
+        if (file_exists($category->image)){
+            unlink($category->image);
+        }
+        $category->delete();
     }
 }
