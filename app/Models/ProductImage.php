@@ -9,13 +9,13 @@ class ProductImage extends Model
 {
     use HasFactory;
 
-    private static $productImage, $image, $imageName, $extension, $directory;
+    private static $productImage, $productImages, $image, $imageName, $extension, $directory;
 
     private static function getImageUrl($image){
         self::$extension    = $image->getClientOriginalExtension();
         self::$imageName    = rand(0, 500000).'.'.self::$extension;
         self::$directory    = 'upload/product-other-images/';
-        $image->move(self::$directory,self::$imageName);
+        $image->move(self::$directory, self::$imageName);
         return self::$directory.self::$imageName;
     }
 
@@ -26,5 +26,17 @@ class ProductImage extends Model
             self::$productImage->image = self::getImageUrl($image);
             self::$productImage->save();
         }
+    }
+
+    public static function updateProductImage($images, $id){
+        self::$productImages = ProductImage::where('product_id',$id)->get();
+        foreach (self::$productImages as $productImage){
+            if (file_exists($productImage->image)){
+                unlink($productImage->image);
+            }
+            $productImage->delete();
+        }
+
+        self::newProductImage($images,$id);
     }
 }

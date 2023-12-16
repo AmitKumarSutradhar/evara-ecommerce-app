@@ -98,7 +98,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+//        return$request;
+       Product::updateProduct($request, $product);
+       ProductColor::updateProductColor($request->colors, $product->id);
+       ProductSize::updateProductSize($request->sizes, $product->id);
+       if ($request->other_image)
+       {
+           ProductImage::updateProductImage($request->other_image, $product->id);
+       }
+       return redirect('/product')->with('message','Product info updated successfully.');
     }
 
     /**
@@ -106,6 +114,6 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+
     }
 }

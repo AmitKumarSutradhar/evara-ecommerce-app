@@ -42,7 +42,7 @@
                                 @foreach($sub_categories as $sub_category)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $sub_category->category->name }}</td>
+                                        <td>{{ isset($sub_category->category->name) ?  $sub_category->category->name : '' }}</td>
                                         <td>{{ $sub_category->name }}</td>
                                         <td><img src="{{ asset($sub_category->image) }}" style="width: 60px;" alt=""></td>
                                         <td>{{ $sub_category->status == 1 ? 'Published' : 'Unpublished' }}</td>

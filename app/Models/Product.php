@@ -74,4 +74,30 @@ class Product extends Model
         return $this->hasMany(ProductImage::class);
     }
 
+    public static function updateProduct($request, $product){
+        if ($request->file('image')){
+            if (file_exists($product->image)){
+                unlink($product->image);
+            }
+            self::$imageUrl = self::getImageUrl($request);
+        }else{
+            self::$imageUrl = $product->image;
+        }
+
+
+        $product->category_id         = $request->category_id;
+        $product->sub_category_id     = $request->sub_category_id;
+        $product->brand_id            = $request->brand_id;
+        $product->unit_id             = $request->unit_id;
+        $product->name                = $request->name;
+        $product->code                = $request->code;
+        $product->short_description   = $request->short_description;
+        $product->long_description    = $request->long_description;
+        $product->image               = self::$imageUrl;
+        $product->regular_price       = $request->regular_price;
+        $product->selling_price       = $request->selling_price;
+        $product->stock_amount        = $request->stock_amount;
+        $product->status              = $request->status;
+        $product->save();
+    }
 }

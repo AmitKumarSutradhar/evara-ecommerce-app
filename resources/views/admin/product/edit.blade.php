@@ -26,6 +26,7 @@
                 <div class="card-body">
                     <p class="text-success">{{ session('message') }}</p>
                     <form class="form-horizontal" action="{{ route('product.update',$product->id) }}" method="post" enctype="multipart/form-data">
+                        @method('PUT')
                         @csrf
                         <div class="row mb-4">
                             <label for="firstName" class="col-md-3 form-label">Category Name</label>
