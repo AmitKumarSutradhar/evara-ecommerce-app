@@ -6,7 +6,6 @@
     <title>Evara - @yield('title')</title>
     @include('website.includes.meta')
     @include('website.includes.style')
-
 </head>
 
 <body>
@@ -18,8 +17,6 @@
 
     @include('website.includes.footer')
     @include('website.includes.script')
-
-
 </body>
 
 </html>

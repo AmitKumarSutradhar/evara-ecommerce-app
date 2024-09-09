@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title','INdex title')
+@section('title','Index title')
 
 @section('body')
     <!-- PAGE-HEADER -->

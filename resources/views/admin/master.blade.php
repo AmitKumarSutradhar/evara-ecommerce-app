@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Noa - Laravel Bootstrap 5 Admin & Dashboard Template">
-    <meta name="author" content="Spruko Technologies Private Limited">
-    <meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
 
     <!-- TITLE -->
     <title>Evara Admin - @yield('title') </title>
@@ -39,9 +39,7 @@
 
                 <!-- CONTAINER -->
                 <div class="main-container container-fluid">
-
                     @yield('body')
-
                 </div>
             </div>
         </div>
@@ -500,7 +498,7 @@
         <div class="container">
             <div class="row align-items-center flex-row-reverse">
                 <div class="col-md-12 col-sm-12 text-center">
-                    Copyright © 2022 <a href="#">Noa</a>. Designed with <span class="fa fa-heart text-danger"></span> by <a href="#"> Spruko </a> All rights reserved
+                    Copyright © 2024 <a href="#">Evara</a>. Designed by <span class="fa fa-heart text-danger"></span> by <a href="#"> Amit </a> All rights reserved
                 </div>
             </div>
         </div>

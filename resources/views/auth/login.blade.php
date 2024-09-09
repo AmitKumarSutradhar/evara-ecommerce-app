@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 
     <!-- META DATA -->
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Noa - Laravel Bootstrap 5 Admin & Dashboard Template">
-    <meta name="author" content="Spruko Technologies Private Limited">
-    <meta name="keywords" content="laravel admin template, bootstrap admin template, admin dashboard template, admin dashboard, admin template, admin, bootstrap 5, laravel admin, laravel admin dashboard template, laravel ui template, laravel admin panel, admin panel, laravel admin dashboard, laravel template, admin ui dashboard">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
 
     <!-- TITLE -->
     <title>Noa - Laravel Bootstrap 5 Admin & Dashboard Template</title>
@@ -59,25 +59,25 @@
                 <div class="card-body">
                     <form action="{{ route('login') }}" method="post" class="login100-form validate-form">
                         @csrf
-									<span class="login100-form-title">
-										Login
-									</span>
+                            <span class="login100-form-title">
+                                Login
+                            </span>
                         <div class="wrap-input100 validate-input" data-bs-validate = "Valid email is required: ex@abc.xyz">
                             <input class="input100" type="text" name="email" placeholder="Email">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
-											<i class="zmdi zmdi-email" aria-hidden="true"></i>
-										</span>
+                                <i class="zmdi zmdi-email" aria-hidden="true"></i>
+                            </span>
                         </div>
                         <div class="wrap-input100 validate-input" data-bs-validate = "Password is required">
                             <input class="input100" type="password" name="password" placeholder="Password">
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
-											<i class="zmdi zmdi-lock" aria-hidden="true"></i>
-										</span>
+                                <i class="zmdi zmdi-lock" aria-hidden="true"></i>
+                            </span>
                         </div>
                         <div class="text-end pt-1">
-                            <p class="mb-0"><a href="forgot-password.html" class="text-primary ms-1">Forgot Password?</a></p>
+                            <p class="mb-0"><a href="#" class="text-primary ms-1">Forgot Password?</a></p>
                         </div>
                         <div class="container-login100-form-btn">
                             <button type="submit" class="login100-form-btn btn-primary">
@@ -85,7 +85,7 @@
                             </button>
                         </div>
                         <div class="text-center pt-3">
-                            <p class="text-dark mb-0">Not a member?<a href="register.html" class="text-primary ms-1">Create an Account</a></p>
+                            <p class="text-dark mb-0">Not a member?<a href="{{ route('register') }}" class="text-primary ms-1">Create an Account</a></p>
                         </div>
                     </form>
                 </div>
